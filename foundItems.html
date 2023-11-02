@@ -1,0 +1,19 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th ng-repeat="title in founds.titles">{{ title }}</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in founds.found">
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.short_name }}</td>
+        <td>
+          <button ng-click="founds.remove({ index: $index })">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

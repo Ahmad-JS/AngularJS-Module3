@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Narrow Down Your Menu Choice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body ng-app="NarrowItDownApp">
+  <div class="title container">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+  </div>
+  <div class="container" ng-controller="NarrowItDownController as narrow">
+    <input ng-model="narrow.searchMenu" type="text" placeholder="search term" class="form-control">
+    <button class="btn btn-primary" ng-click="narrow.getItems(narrow.searchMenu)">Narrow It Down For Me!</button>
+    <found-items found="narrow.found" titles="narrow.titles" remove="narrow.removeMenuItem(index)"></found-items>
+    <div class="error" ng-show="narrow.searched">
+      No matching items found.
+    </div>
+  </div>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
